@@ -9,14 +9,14 @@ num2 = int(input("2nd Number?"))
 
 if calc == "add":
     result = num1 + num2
-    print(f"{num1} + {num2} = {result}")
+    print(f"{result}")
 elif calc == "sub": 
     result = num1 - num2
-    print(f"{num1} - {num2} = {result}")
+    print(f"{result}")
 elif calc == "mult":
     result = num1 * num2
-    print(f"{num1} * {num2} = {result}")
+    print(f"{result}")
 else:
     calc == "div"
     result = num1 / num2
-    print(f"{num1} / {num2} = {result}")
+    print(f"{result}")
