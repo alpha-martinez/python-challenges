@@ -1,31 +1,34 @@
 print("Welcome to Chase bank.")
 
-balance = "7000"
 
-def banking(balance):
-    print('Your current balance is')
-    print('$' + balance)
-    first = input("What would you like to do? (deposit, withdraw, check_balance)")
-
-    if first == "deposit":
-        deposit = input('How much would you like to deposit? ')
-        print('Deposited $' + int(deposit))
-        balance = int(deposit) + int(balance)
-    elif first == "withdraw":
-        withdraw = input('How much would you like to withdraw from your account? ')
-        print ('Withdrew $' + withdraw)
-        balance = int(balance) - int(withdraw)    
-    elif action == "check_balance":
-        balance == balance
-    else:     
-        print('Sorry')
-
-    done = input('Are you done? (yes or no)')
-    if done == "yes":
-        print('Have a nice day!')
-    else: 
-        print('What would you like to do next? (deposit, withdraw, check_balance)') 
+def banking():
+    balance = 7000
+    print("Your current balance is $" + str(balance))
+    first_prompt = input("Would you like to deposit, withdraw or check_balance?")
+    
+    if first_prompt == "deposit":
+        deposit = input("How much would you like to deposit?")
+        balance = int(balance) + int(deposit)
+        print("Your new balance is $" + str(balance))
+        final_prompt()
         
-banking(balance)
+    elif first_prompt == "withdraw":
+        withdraw = input("How much would you like to withdraw?")
+        balance = balance - int(withdraw)
+        print("Withdrew $" + str(withdraw) + ". Your new balance is $" + str(balance))
+        final_prompt()
+    
+    elif first_prompt == "check_balance":
+        print(balance)
+    else:
+        print('move it then')
 
-print("Have a nice day!")   
+def final_prompt():
+    done = input("Would you like to do anything else? Y/N")
+    done = done.upper()
+    if done == "Y":
+        banking()
+    else:
+        print("Have a nice day!")
+        
+banking()
