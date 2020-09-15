@@ -20,8 +20,7 @@ def banking():
     
     elif first_prompt == "check_balance":
         print(balance)
-    else:
-        print('move it then')
+        final_prompt() 
 
 def final_prompt():
     done = input("Would you like to do anything else? Y/N")
